@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\PublicController;                                                                                                                                              npm;
 
@@ -19,3 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', [App\Http\Controllers\PublicController::class, 'homepage'])->name('homepage');
+Route::get('/article/create', [App\Http\Controllers\ArticleController::class, 'create'])->name('article.create');
+
+
+// CREAZIONE DEGLI ARTICOLI DA FARE.....

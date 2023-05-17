@@ -21,7 +21,7 @@
                 </div>
             @endif
 
-            <form action="card p-5 shadow" action="{{ route('login') }}" method="post">
+            <form class="card p-5 shadow" action="{{ route('login') }}" method="post">
                 @csrf
 
                 <div class="mb-3">
