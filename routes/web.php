@@ -22,7 +22,8 @@ Route::get('/', function () {
 Route::get('/', [App\Http\Controllers\PublicController::class, 'homepage'])->name('homepage');
 Route::get('/article/create', [App\Http\Controllers\ArticleController::class, 'create'])->name('article.create');
 Route::post('/article/store', [App\Http\Controllers\ArticleController::class, 'store'])->name('article.store');
-Route::post('/article/index', [App\Http\Controllers\ArticleController::class, 'sindex'])->name('article.index');
+Route::get('/article/index', [App\Http\Controllers\ArticleController::class, 'index'])->name('article.index');
+Route::get('/article/show/{article}', [App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
 
 
 // CREAZIONE DEGLI ARTICOLI DA FARE.....
