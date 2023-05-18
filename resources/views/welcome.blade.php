@@ -5,6 +5,11 @@
             <h1 class="display-1">
                 The Aulab Post
             </h1>
+            @if(session('message'))
+                <div class="alert alert-success text-center">
+                    {{ session('message')}}
+                </div>
+            @endif
         </div>
     </div>
     

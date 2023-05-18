@@ -14,14 +14,14 @@
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
-                            @foreach ($errors->all as $errors)
+                            @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
                             @endforeach
                         </ul>
                     </div>
                 @endif
     
-                <form action="card p-5 shadow" action="{{ route('article.store') }}" method="post" enctype="multipart/form-data">
+                <form class="card p-5 shadow" action="{{ route('article.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
     
                     <div class="mb-3">
@@ -30,7 +30,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="subtitle" class="form-label">Sottotitolo</label>
-                        <input name="subtitle" type="email" class="form-control" id="subtitle" value="{{ old('subtitle') }}">
+                        <input name="subtitle" type="text" class="form-control" id="subtitle" value="{{ old('subtitle') }}">
                     </div>
                     <div class="mb-3">
                         <label for="image" class="form-label">Immagine</label>
@@ -49,7 +49,7 @@
                         <textarea name="body" id="body" cols="30" rows="7" class="form-control">{{ old('body') }}</textarea>
                     </div>
                     <div class="mt-2">
-                        <button class="btn bg-info text-white">Inserisci un articolo</button>
+                        <button class="btn btn-info text-white">Inserisci un articolo</button>
                         <p><a class="btn btn-outline-info" href="{{ route('homepage') }}">Torna alla home</a></p>
                     </div>
                 </form>
