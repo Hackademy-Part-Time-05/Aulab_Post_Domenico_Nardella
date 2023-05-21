@@ -29,4 +29,6 @@ Route::get('/article/editor/{editor}', [App\Http\Controllers\ArticleController::
 Route::get('/careers', [App\Http\Controllers\PublicController::class, 'careers'])->name('careers');
 Route::get('/careers/submit', [App\Http\Controllers\PublicController::class, 'careersSubmit'])->name('careers.submit');
 
-
+Route::middleware('admin')->group(function(){
+    Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+}); 
