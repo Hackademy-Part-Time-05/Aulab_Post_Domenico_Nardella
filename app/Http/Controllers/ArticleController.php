@@ -94,4 +94,9 @@ class ArticleController extends Controller
         return view('article.by-category', compact('category', 'articles'));
     }
 
+    public function editor(Editor $editor){
+        $articles = $editor->articles->sortByDesc('created_at');
+        return view('article.editor', compact('editor', 'articles'));
+    }
+
 }

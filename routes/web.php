@@ -25,6 +25,7 @@ Route::post('/article/store', [App\Http\Controllers\ArticleController::class, 's
 Route::get('/article/index', [App\Http\Controllers\ArticleController::class, 'index'])->name('article.index');
 Route::get('/article/show/{article}', [App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/category/{category}', [App\Http\Controllers\ArticleController::class, 'byCategory'])->name('article.byCategory');
+Route::get('/article/editor/{editor}', [App\Http\Controllers\ArticleController::class, 'editor'])->name('article.editor');
 
 
 // CREAZIONE DEGLI ARTICOLI DA FARE.....
