@@ -26,6 +26,7 @@ Route::get('/article/index', [App\Http\Controllers\ArticleController::class, 'in
 Route::get('/article/show/{article}', [App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/category/{category}', [App\Http\Controllers\ArticleController::class, 'byCategory'])->name('article.byCategory');
 Route::get('/article/editor/{editor}', [App\Http\Controllers\ArticleController::class, 'editor'])->name('article.editor');
+Route::get('/careers', [App\Http\Controllers\PublicController::class, 'careers'])->name('careers');
+Route::get('/careers/submit', [App\Http\Controllers\PublicController::class, 'careersSubmit'])->name('careers.submit');
 
 
-// CREAZIONE DEGLI ARTICOLI DA FARE.....
