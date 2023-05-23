@@ -21,7 +21,7 @@
                         </div>
                         <div class="card-footer text-muted d-flex justify-content-between align-items-center">
                             Redatto il {{ $article->created_at->format('d/m/Y')}} da {{ $article->user->name}}
-                            <a href="{{ route('article.byCategory', ['category', => $article->category->id]))}}" class="small text-muted fst-italic text-capitalize">{{ $article->category->name }}</a>
+                            <a href="{{ route('article.byCategory', ['category' => $article->category->id])}}" class="small text-muted fst-italic text-capitalize">{{ $article->category->name }}</a>
                         </div>
                     </div>
                 </div>

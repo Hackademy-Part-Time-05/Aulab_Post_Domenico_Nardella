@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use App\Models\User;
 return new class extends Migration
 {
     /**
@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->boolean('is_admin')->after('email')->nullable()->default(false);
             $table->boolean('is_revisor')->after('is_admin')->nullable()->default(false);
-            $table->boolean('is_writer')->after('is_revisorr')->nullable()->default(false);
+            $table->boolean('is_writer')->after('is_revisor')->nullable()->default(false);
         });
 
         $user = User::create([
