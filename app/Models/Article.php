@@ -38,4 +38,8 @@ class Article extends Model
             'category' => $this->category,
         ];
     }
+
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
+    }
 }
