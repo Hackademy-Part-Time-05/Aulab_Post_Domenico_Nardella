@@ -59,7 +59,7 @@ Route::middleware('revisor')->group(function(){
 Route::middleware('revisor')->group(function(){
     Route::get('/revisor/{article}/undo', [RevisorController::class, 'undoArticle'])->name('revisor.undoArticle');
 }); 
-
+Route::get('/article/search', [App\Http\Controllers\ArticleController::class, 'articleSearch'])->name('article.search');
 
 
 // REVISOR DASHBOARD SONO QUI 
