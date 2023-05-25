@@ -83,7 +83,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('article.edit', compact('article'));
     }
 
     /**
@@ -91,12 +91,47 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
-    }
+        $request->validate([
+            'title' => 'required|min:5|unique:articles,title,' . $article->id,
+            'subtitle' => 'required|min:5|unique:articles,subtitle,' . $article->id,
+            'body' => 'required|min:10',
+            'image' => 'image',
+            'category' => 'required',
+            'tags' => 'required',
+        ]);
 
+        $article->update([
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'body' => $request->body,
+            'category_id' => $request->category,
+        ]);
+
+        if($request->image){
+            Storage::delete($article->image);
+            $article->update([
+                'image' => $request->file('image')->store('public/images'),
+            ]);
+
+            $tags = explode(', ', $request->tag);
+            $newTags = [];
+
+            foreach($tags as $tag){
+                $newTag = Tag::updateOrCreate([
+                    'name' => $tag,
+                ]);
+
+                $newTags[] = $newTag->id;
+            }
+
+            $article->tags()->sync($newTags);
+
+            return redirect('writer.dashboard')->with('message', 'Hai correttamente aggiornato l\articolo scelto');
+    }
     /**
      * Remove the specified resource from storage.
      */
+
     public function destroy(Article $article)
     {
         //
@@ -106,6 +141,7 @@ class ArticleController extends Controller
         $articles = $category->articles->sortByDesc('created_at')->filter(function($article){
             return $article->is_accepted == true;
         });
+
         return view('article.by-category', compact('category', 'articles'));
     }
 
@@ -113,6 +149,7 @@ class ArticleController extends Controller
         $articles = $user->articles->sortByDesc('created_at')->filter(function($article){
             return $article->is_accepted == true;
         });
+
         return view('article.by-user', compact('user', 'articles'));
     }
 

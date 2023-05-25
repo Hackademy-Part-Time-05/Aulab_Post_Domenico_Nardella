@@ -78,5 +78,11 @@ Route::middleware('admin')->group(function(){
 Route::middleware('writer')->group(function(){
     Route::get('/writer/dashboard/', [App\Http\Controllers\WriterController::class, 'dashboard'])->name('writer.dashboard');
 });
+Route::middleware('writer')->group(function(){
+    Route::get('/article{article}/edit', [App\Http\Controllers\ArticleController::class, 'edit'])->name('article.edit');
+});
+Route::middleware('writer')->group(function(){
+    Route::put('/article{article}/update', [App\Http\Controllers\ArticleController::class, 'update'])->name('article.update');
+});
 
 // REVISOR DASHBOARD SONO QUI 
