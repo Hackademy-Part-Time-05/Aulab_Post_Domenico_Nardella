@@ -19,6 +19,11 @@
                 <div class="col-12 col-md-3">
                     <div class="card">
                         <img src="{{ Storage::url($article->image)}}" class="card-img-top" alt="...">
+                        <p class="small fst-italic text-capitalize">
+                            @foreach ($article->tags as $tag)
+                                #{{ $tag->name }}
+                            @endforeach
+                        </p>
                         <div class="card-body">
                             <h5 class="card-title">{{ $article->title }}</h5>
                             <p class="card-text">{{ $article->subtitle }}</p>
