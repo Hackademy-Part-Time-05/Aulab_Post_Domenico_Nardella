@@ -60,6 +60,11 @@ Route::middleware('revisor')->group(function(){
     Route::get('/revisor/{article}/undo', [RevisorController::class, 'undoArticle'])->name('revisor.undoArticle');
 }); 
 Route::get('/article/search', [App\Http\Controllers\ArticleController::class, 'articleSearch'])->name('article.search');
-
+Route::middleware('admin')->group(function(){
+    Route::put('/admin/edit/{tag}/tag', [App\Http\Controllers\AdminController::class, 'editTag'])->name('admin.editTag');
+});
+Route::middleware('admin')->group(function(){
+    Route::put('/admin/delete/{tag}/tag', [App\Http\Controllers\AdminController::class, 'deleteTag'])->name('admin.deleteTag');
+});
 
 // REVISOR DASHBOARD SONO QUI 
