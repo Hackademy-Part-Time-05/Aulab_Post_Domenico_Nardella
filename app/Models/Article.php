@@ -48,4 +48,11 @@ class Article extends Model
     {
         return 'slug';
     }
+
+    public function readDuration(){
+        $totalWords = str_word_count($this->body);
+        $minutesToRead = round($totalWords / 200);
+
+        return intval($minutesToRead);
+    }
 }

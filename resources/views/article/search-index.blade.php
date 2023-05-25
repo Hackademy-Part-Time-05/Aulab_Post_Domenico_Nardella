@@ -14,26 +14,27 @@
                 <div class="col-12 col-md-3 my-2">
                     <div class="card">
                         <img src="{{ Storage::url($article->image)}}" class="card-img-top" alt="...">
-                        <p class="small fst-italic text-capitalize">
-                            @foreach ($article->tags as $tag)
-                                #{{ $tag->name }}
-                            @endforeach
-                        </p>
-                        @if($article->category)
-                            <a href="{{ route('article.byCategory', ['category' => $article->category->id])}}" class="small text-muted fst-italic text-capitalize">{{ $artticle->category->name }}</a>
-                        @else
-                        <p class="small text-muted fst-italic text-capitalize">
-                            Non categorizzato
-                        </p>
-                        @endif
                         <div class="card-body">
                             <h5 class="card-title">{{ $article->title }}</h5>
                             <p class="card-text">{{ $article->subtitle }}</p>
-                            <a href="{{ route('article.byCategory', ['category' => $article->category->id])}}" class="small text-muted fst-italic text-capitalize">{{ $article->category->name }}</a>
+                            @if($article->category)
+                                <a href="{{ route('article.byCategory', ['category' => $article->category->id])}}" class="small text-muted fst-italic text-capitalize">{{ $article->category->name }}</a>
+                            @else
+                            <p class="small text-muted fst-italic text-capitalize">
+                                Non categorizzato
+                            </p>
+                            @endif
+                            <span class="text-muted small fst-italic">- tempo di lettura {{ $article->readDuration()}} min</span>
+                            <hr>
+                            <p class="small fst-italic text-capitalize">
+                                @foreach($article->tags as $tag)
+                                    #{{ $tag->name }}
+                                @endforeach
+                            </p>
                         </div>
                         <div class="card-footer text-muted d-flex justify-content-between align-items-center">
-                            <a href="{{ route('article.byUser', ['user' => $article->user->id])}}">Redatto il {{ $article->created_at->format('d/m/Y')}} da {{ $article->user->name}}</a>
-                            <a href="{{ route('article.show', compact('article'))}}" class="btn btn-info text-white">Leggi</a>
+                            <a  class="" href="{{ route('article.byUser', ['user' => $article->user->id]) }}">Redatto il {{ $article->created_at->format('d/m/Y')}} da {{ $article->user->name}}</a>
+                            <a  href="{{ route('article.show', compact('article'))}}" class="btn btn-info text-white">Leggi</a>
                         </div>
                     </div>
                 </div>
