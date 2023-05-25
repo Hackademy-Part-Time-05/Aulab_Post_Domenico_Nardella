@@ -72,5 +72,8 @@ Route::middleware('admin')->group(function(){
 Route::middleware('admin')->group(function(){
     Route::delete('/admin/delete/{category}/category', [App\Http\Controllers\AdminController::class, 'deleteCategory'])->name('admin.deleteCategory');
 });
+Route::middleware('admin')->group(function(){
+    Route::post('/admin/category/store', [App\Http\Controllers\AdminController::class, 'storeCategory'])->name('admin.storeCategory');
+});
 
 // REVISOR DASHBOARD SONO QUI 

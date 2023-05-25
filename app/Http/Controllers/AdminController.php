@@ -63,7 +63,7 @@ class AdminController extends Controller
         return redirect(route('admin.dashboard'))->with('message', 'Hai correttamente eliminato il tag');
     }
 
-    public function editCategory(Request, Category $category){
+    public function editCategory(Request $request, Category $category){
         $request->validate([
             'name' => 'required|unique:categories',
         ]);
@@ -76,9 +76,17 @@ class AdminController extends Controller
     }
 
     public function deleteCategory(Category $category){
-        $Category->delete();
+        $category->delete();
 
         return redirect(route('admin.dashboard'))->with('message', 'Hai correttamente elininato la categoria');
+    }
+
+    public function storeCategory(Request $request){
+        Category::create([
+            'name' => strtolower($request->name),
+        ]);
+
+        return redirect(route('admin.dashboard'))->with('message', 'Hai correttamente inserito una nuova categoria');
     }
 
 }
