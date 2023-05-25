@@ -75,5 +75,8 @@ Route::middleware('admin')->group(function(){
 Route::middleware('admin')->group(function(){
     Route::post('/admin/category/store', [App\Http\Controllers\AdminController::class, 'storeCategory'])->name('admin.storeCategory');
 });
+Route::middleware('writer')->group(function(){
+    Route::get('/writer/dashboard/', [App\Http\Controllers\WriterController::class, 'dashboard'])->name('writer.dashboard');
+});
 
 // REVISOR DASHBOARD SONO QUI 

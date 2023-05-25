@@ -27,11 +27,13 @@
               @if(Auth::user()->is_revisor)
               <li><a class="dropdown-item" href="{{ route('revisor.dashboard') }}">Dashboard del revisore</a></li>
               @endif
+              @if(Auth::user()->is_writer)
+              <li><a class="dropdown-item" href="{{ route('writer.dashboard') }}">Dashboard del revisore</a></li>
+              @endif
               <form method="POST" action="{{ route('logout') }}" id="form-logout" class="d-none">
                 @csrf
               </form>
             </ul>
-            
           </li>
           @endauth
           @guest
