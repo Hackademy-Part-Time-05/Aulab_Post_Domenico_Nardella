@@ -84,5 +84,8 @@ Route::middleware('writer')->group(function(){
 Route::middleware('writer')->group(function(){
     Route::put('/article{article}/update', [App\Http\Controllers\ArticleController::class, 'update'])->name('article.update');
 });
+Route::middleware('writer')->group(function(){
+    Route::delete('/article{article}/destroy', [App\Http\Controllers\ArticleController::class, 'destroy'])->name('article.destroy');
+});
 
 // REVISOR DASHBOARD SONO QUI 

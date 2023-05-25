@@ -134,7 +134,13 @@ class ArticleController extends Controller
 
     public function destroy(Article $article)
     {
-        //
+        foreach($article->tags as $tag){
+            $article->tags()->detach($tag);
+        }
+
+        $article->delete();
+
+        return redirect('writer.dashboard')->with('message', 'Hai correttamente cancellato l\articolo scelto');
     }
 
     public function byCategory(Category $category){
