@@ -54,6 +54,7 @@ class ArticleController extends Controller
             'image' => $request->file('image')->store('public/images'),
             'category_id' => $request->category,
             'user_id' => Auth::user()->id,
+            'slug' => Str::slug($request->title),
             
         ]);
 
@@ -105,6 +106,7 @@ class ArticleController extends Controller
             'subtitle' => $request->subtitle,
             'body' => $request->body,
             'category_id' => $request->category,
+            'slug' => Str::slug($request->title),
         ]);
 
         if($request->image){
@@ -126,22 +128,25 @@ class ArticleController extends Controller
 
             $article->tags()->sync($newTags);
 
-            return redirect('writer.dashboard')->with('message', 'Hai correttamente aggiornato l\articolo scelto');
+            return redirect('writer.dashboard')->with('message', 'Hai correttamente aggiornato l\'articolo scelto');
     }
     /**
      * Remove the specified resource from storage.
      */
 
-    public function destroy(Article $article)
-    {
-        foreach($article->tags as $tag){
-            $article->tags()->detach($tag);
-        }
-
-        $article->delete();
-
-        return redirect('writer.dashboard')->with('message', 'Hai correttamente cancellato l\articolo scelto');
-    }
+     {
+         public function destroy(Article $article)
+         {
+             foreach ($article->tags as $tag) {
+                 $article->tags()->detach($tag);
+             }
+     
+             $article->delete();
+     
+             return redirect(route('writer.dashboard'))->with('message', 'Hai correttamente cancellato l\'articolo scelto');
+         }
+     }
+     
 
     public function byCategory(Category $category){
         $articles = $category->articles->sortByDesc('created_at')->filter(function($article){
