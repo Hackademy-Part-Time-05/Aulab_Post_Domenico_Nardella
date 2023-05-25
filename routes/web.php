@@ -66,5 +66,11 @@ Route::middleware('admin')->group(function(){
 Route::middleware('admin')->group(function(){
     Route::put('/admin/delete/{tag}/tag', [App\Http\Controllers\AdminController::class, 'deleteTag'])->name('admin.deleteTag');
 });
+Route::middleware('admin')->group(function(){
+    Route::put('/admin/edit/{category}/category', [App\Http\Controllers\AdminController::class, 'editCategory'])->name('admin.editCategory');
+});
+Route::middleware('admin')->group(function(){
+    Route::delete('/admin/delete/{category}/category', [App\Http\Controllers\AdminController::class, 'deleteCategory'])->name('admin.deleteCategory');
+});
 
 // REVISOR DASHBOARD SONO QUI 
