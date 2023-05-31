@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Article;
+use Illuminate\Http\Request;
+use App\Mail\CareerRequestMail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class PublicController extends Controller
 {
@@ -21,10 +24,10 @@ class PublicController extends Controller
         return view('careers');
     }
 
-    public function careerSubmit(Request $request){
+    public function careersSubmit(Request $request){
         $request->validate([
             'role' => 'required',
-            'email' => 'required|email',
+            // 'email' => 'required|email', 
             'message' => 'required',
         ]);
 
@@ -47,8 +50,8 @@ class PublicController extends Controller
             case 'writer':
                 $user->is_writer = NULL;
                 break; 
-        }
-
+            }
+            
         $user->update();
 
         return redirect(route('homepage'))->with('message', 'Grazie per averci contattato!');

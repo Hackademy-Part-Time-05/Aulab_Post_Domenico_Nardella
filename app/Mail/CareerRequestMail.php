@@ -29,7 +29,7 @@ class CareerRequestMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Richiesta di lavoro ricevuta ',
+            subject: 'Richiesta di lavoro ricevuta',
         );
     }
 
@@ -39,7 +39,7 @@ class CareerRequestMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail, career-request-mail',
+            view: 'mail.career-request-mail',
         );
     }
 

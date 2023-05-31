@@ -29,15 +29,15 @@
                         <input name="title" type="text" class="form-control" id="title" value="{{ old('title') }}">
                     </div>
                     <div class="mb-3">
-                        <label for="subtitle" class="form-label">Sottotitolo</label>
+                        <label for="subtitle" class="form-label">Sottotitolo:</label>
                         <input name="subtitle" type="text" class="form-control" id="subtitle" value="{{ old('subtitle') }}">
                     </div>
                     <div class="mb-3">
-                        <label for="image" class="form-label">Immagine</label>
+                        <label for="image" class="form-label">Immagine:</label>
                         <input name="image" type="file" class="form-control" id="image">
                     </div>
                     <div class="mb-3">
-                        <label for="category" class="form-label">Categoria</label>
+                        <label for="category" class="form-label">Categoria:</label>
                         <select name="category" id="category" class="form-control text-capitalize">
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -45,7 +45,7 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="body" class="form-label">Corpo del testo</label>
+                        <label for="body" class="form-label">Corpo del testo:</label>
                         <textarea name="body" id="body" cols="30" rows="7" class="form-control">{{ old('body') }}</textarea>
                     </div>
                     <div class="mb-3">

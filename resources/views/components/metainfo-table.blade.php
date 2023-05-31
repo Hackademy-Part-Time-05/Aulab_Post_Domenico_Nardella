@@ -61,8 +61,3 @@
 </table>
 
 
-@if(is_null($article->is_accepted))
-<a href="{{ route('article.show', compact('article'))}}" class="btn btn-info text-white">Leggi l'articolo</a>
-@else
-<a href="{{ route('revisor.undoArticle', compact('article'))}}" class="btn btn-info text-white">Riporta in revisione</a>
-@endif

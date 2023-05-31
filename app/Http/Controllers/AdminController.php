@@ -43,7 +43,7 @@ class AdminController extends Controller
 
     public function editTag(Request $request, Tag $tag){
         $request->validate([
-            'name' => 'unique:tags',
+            'name' => 'required|unique:tags',
         ]);
 
         $tag->update([

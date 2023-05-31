@@ -22,13 +22,13 @@
                     <div class="alert alert-danger">
                         <ul>
                             @foreach($errors->all() as $error)
-                                <li>{{ $error}}</li>
+                                <li>{{ $error }}</li>
                             @endforeach
                         </ul>
                     </div>
                 @endif
 
-                <form class="p-5" action="" method="">
+                <form class="p-5" action="{{ route('careers.submit')}}" method="POST">
                     @csrf
 
                     <div class="mb-3">
@@ -45,7 +45,7 @@
                         <input nome="email" type="email" class="form-control" id="email" value="{{ old('email') ?? Auth::user()->email }}">
                     </div>
                     <div class="mb-3">
-                        <label for="message" class="form-label">Parlaci te</label>
+                        <label for="message" class="form-label">Parlaci di te</label>
                         <textarea name="message" id="message" cols="30" rows="7" class="form-control">{{ old('message') }}</textarea>
                     </div>
                     <div class="my-2">
