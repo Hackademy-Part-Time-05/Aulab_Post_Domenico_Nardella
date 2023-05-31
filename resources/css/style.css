@@ -7,6 +7,10 @@
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #fff;
+    background-image: url(https://img.freepik.com/free-vector/gradient-trendy-background_23-2150457116.jpg?size=626&ext=jpg&ga=GA1.2.1448058093.1677063228&semt=sph);
+    background-repeat: no-repeat;
+    background-size: cover ;
+   
 }
 
 

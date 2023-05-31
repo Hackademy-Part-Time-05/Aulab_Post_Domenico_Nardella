@@ -18,7 +18,7 @@
                 <td>{{ $article->subtitle }}</td>
                 <td>{{ $article->category->name ?? 'Non categorizzato' }}</td>
                 <td>
-                    @foreach($articles->tags as $tag)
+                    @foreach($article->tags as $tag)
                         {{ $tag->name }}
                     @endforeach
                 </td>

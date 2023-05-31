@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg p-0 fixed-top ">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-       {{-- <img src="{{ asset('./media/logo572.png')}}" alt="logo">  --}}
-       <img src="./media/logo.png" alt="logo"> 
+       <img src="{{ asset('./storage\app\public\images\572.png')}}" alt="logo"> 
+       {{-- <img src="./media/logo.png" alt="logo">  --}}
        The Aulab Post</a>
       <button class="navbar-toggler button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
