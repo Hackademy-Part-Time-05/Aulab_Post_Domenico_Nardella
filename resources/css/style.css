@@ -5,9 +5,9 @@
 }
 
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Rubik', sans-serif;;
     background-color: #fff;
-    background-image: url(https://img.freepik.com/free-vector/gradient-trendy-background_23-2150457116.jpg?size=626&ext=jpg&ga=GA1.2.1448058093.1677063228&semt=sph);
+    background-image: url(https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?size=626&ext=jpg&ga=GA1.1.1448058093.1677063228&semt=ais);
     background-repeat: no-repeat;
     background-size: cover ;
    
@@ -17,7 +17,7 @@ body {
 nav {
     width: 100%;
     padding: 0 20px;
-    background: lightgray;
+    background: rgb(235, 231, 219);
 }
 
 .menu {
@@ -48,6 +48,66 @@ nav {
 .btn {
     border-color: 3px solid black;
 }
+
+/* Animated Search Bar  */
+.search {
+    display: flex;
+    background: linear-gradient(45deg, #333, #5A5454);
+    height: 30px;
+    padding: px;
+}
+
+.search:hover input {
+    width: 250px;
+    padding: 0 10px;
+}
+
+.search:hover button {
+    background-color: #E6E6E6;
+}
+.search:hover input button {
+    border-radius: 50%;
+}
+
+.search input {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    font-size: 14px;
+    color: #fff;
+    width: 0;
+    transition: 1s;
+}
+
+.search button {
+    color: #00B7FF;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #333;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.rounded{
+        -webkit-border-radius: 20px;
+        
+        -moz-border-radius: 20px;
+        
+        }
+
+/* MAIN */
+
+.main-content {
+    justify-content: space-around;
+    border: 30px red;
+    margin: 50px;
+}
+
+
 
 /* Start Footer */
 footer {

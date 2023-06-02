@@ -12,7 +12,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
                 
-                @if($errores->any())
+                @if($errors->any())
                     <div class="alert alert-danger">
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -39,7 +39,7 @@
                         <label for="category" class="form-label">Categoria:</label>
                         <select name="category" id="category" class="form-control text-capitalize">
                             @foreach($categories as $category)
-                                <option value="{{ $category->id}}" @if($article->category && $category->id == $article->cayegory->id) selected @endif>{{ $category->name }}</option>
+                                <option value="{{ $category }}" @if($article->category && $category == $article->cayegory) selected @endif>{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>

@@ -1,9 +1,9 @@
 <x-layout>
 
-    <div class="container-fluid p-5 bg-info text-center text-black">
+    <div class="container-fluid p-5 bg-info opacity-25 text-center text-black">
         <div class="row justify-content-center">
             <h1 class="display-1">
-                The Aulab Post
+                The Blog post
             </h1>
             @if(session('message'))
                 <div class="alert alert-success text-center">
