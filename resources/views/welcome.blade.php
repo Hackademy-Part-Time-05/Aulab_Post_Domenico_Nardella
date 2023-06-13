@@ -16,7 +16,7 @@
     <div class="container my-5">
         <div class="row justify-content-around">
             @foreach ($articles as $article)
-                <div class="col-12 col-md-3">
+                <div class="col-12 col-md-3 m-3">
                     <div class="card">
                         <img src="{{ Storage::url($article->image) }}" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -37,7 +37,7 @@
                                 @endforeach
                             </p>
                         </div>
-                        <div class="card-footer text-muted d-flex justify-content-between align-items-center">
+                        <div class="card-footer text-muted">
                             <a  class="" href="{{ route('article.byUser', ['user' => $article->user->id]) }}">Redatto il {{ $article->created_at->format('d/m/Y')}} da {{ $article->user->name }}</a>
                             <a  href="{{ route('article.show', compact('article')) }}" class="btn btn-info text-white">Leggi</a>
                         </div>

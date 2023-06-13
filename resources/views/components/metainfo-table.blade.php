@@ -39,6 +39,7 @@
                         <button type="submit" class="btn btn-danger text-white">Elimina</button>
                     </form>
                 </td>
+                @else
                 <td>
                     <form action="{{ route('admin.editCategory', ['category' => $metaInfo]) }}" method="POST">
                         @csrf

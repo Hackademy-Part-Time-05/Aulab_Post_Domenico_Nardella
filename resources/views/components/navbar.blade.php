@@ -1,8 +1,7 @@
-<nav class="navbar navbar-expand-lg p-0 fixed-top">
+<nav class="navbar navbar-expand-lg p-0 fixed-top bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-       <img src="{{ asset('\storage\app\public\images\572.png')}}" alt="logo"> 
-       {{-- <img src="./media/logo.png" alt="logo">  --}}
+       <img class="logo rounded-circle" src= "{{ asset('./media/logo.jpeg')}}" alt="logo"> 
        </a>
       <button class="navbar-toggler button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -59,7 +58,7 @@
           {{-- <input class="form-control me-2 opacity-50 border-dark m-2 mb-1" type="search" name="query" placeholder="Cosa stai cercando?" aria-label="Search">
           <button type="submit" class="btn btn-outline-info text-dark border-dark rounded-5 p-1 m-2 mb-1">Cerca</button> --}}
           <div class="search rounded-pill">
-            <input type="search" placeholder="Search">
+            <input type="search" name="query" placeholder="Search">
             <button>
               <i class="fa fa-search"></i>
             </button>
